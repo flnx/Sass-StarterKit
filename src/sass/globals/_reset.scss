@@ -1,3 +1,15 @@
+// stops the animations in the beggining
+:root {
+  --playing-state: paused;
+}
+
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Modern CSS Reset */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -35,6 +47,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 100%;
 }
 
 /* A elements that don't have a class get default styles */

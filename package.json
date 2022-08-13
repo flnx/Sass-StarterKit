@@ -17,7 +17,7 @@
     "serve": "browser-sync start --server dist --files dist",
     "start": "npm-run-all --parallel watch serve",
     "build": "npm-run-all copy:html build:* copy:css",
-    "postbuild": "postcss dist/css/*.css -u autoprefixer cssnano -r --no-map"
+    "postbuild": "postcss dist/css/*.css -u a`ut`oprefixer cssnano -r --no-map"
   },
   "dependencies": {
     "autoprefixer": "^10.4.2",
