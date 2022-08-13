@@ -1,0 +1,35 @@
+{
+  "name": "frontend-boilerplate",
+  "version": "2.0.0",
+  "description": "SASS compile|autoprefix|minimize and live-reload dev server using Browsersync for static HTML",
+  "main": "public/index.html",
+  "author": "Kaloyan Georgiev",
+  "scripts": {
+    "build:sass": "sass src/sass:dist/css",
+    "copy:css": "copyfiles -u 1 ./src/css/* dist",
+    "copy:images": "copyfiles -u 1 ./src/**/images/**/* dist",
+    "copy:html": "copyfiles -u 1 ./src/**/*.html dist",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:images": "copyfiles -u 1 ./src/**/images/**/* dist",
+    "watch:html": "onchange \"src/**/*.html\" -- npm run copy:html",
+    "watch:sass": "sass --watch src/sass:dist/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server dist --files dist",
+    "start": "npm-run-all --parallel watch serve",
+    "build": "npm-run-all copy:html build:* copy:css",
+    "postbuild": "postcss dist/css/*.css -u autoprefixer cssnano -r --no-map"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.10",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.1.13",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.54.4"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

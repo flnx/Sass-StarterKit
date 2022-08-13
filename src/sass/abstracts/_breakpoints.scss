@@ -1,0 +1,29 @@
+// 640px, 1024px, 1300px, 1400px
+$breakpoints-up: (
+  "medium": "40em", // 640px
+  "large": "64em", // 1024px
+  "prexl": "81em", // 1300px
+  "xlarge": "87.5em", // 1400px
+);
+
+//639px, 1023px, 1299px, 1399px
+$breakpoints-down: (
+  "small": "39.9375em", // 639px
+  "medium": "63.9375em", //1023 px
+  "prexl": "80.9375em", //1299px
+  "large": "87.4375em", // 1399px
+);
+
+@mixin breakpoint-up($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+      @content;
+    }
+  }
+  
+  @mixin breakpoint-down($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+      @content;
+    }
+  }
+  
+  // 640px, 1024px, 1296px, 1400px
