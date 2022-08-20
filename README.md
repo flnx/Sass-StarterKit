@@ -2,7 +2,10 @@
 
 ## Development Scripts
 
-> after 'npm install' run:
+> You need to run:
+**`npm install`**
+
+**`npm run copy:html`**
 
 **`npm start`**
 
@@ -11,3 +14,5 @@
 **`npm run build`**
 
 > Production build includes minified, auto-prefixed CSS + Browser Sync
+
+--- 
